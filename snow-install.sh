@@ -77,3 +77,9 @@ echo "Setup completed successfully."
 #
 
 #java -Djava.io.tmpdir=/tmp -jar /glide/${snow_pkg} --dst-dir /glide/nodes/instance0_16000 install -n instance0 -p 16000
+
+cp /glide/scripts/glide_node_dir_name /glide/scripts/glide_instance0_16000
+sudo sed -i 's/node_dir_name/instance0_16000/' /glide/scripts/glide_instance0_16000
+mv /glide/scripts/glide_instance0_16000 /etc/init.d/
+systemctl daemon-reload
+systemctl enable glide_instance0_16000
