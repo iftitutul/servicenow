@@ -83,3 +83,8 @@ sudo sed -i 's/node_dir_name/instance0_16000/g' /glide/scripts/glide_instance0_1
 mv /glide/scripts/glide_instance0_16000 /etc/init.d/
 systemctl daemon-reload
 systemctl enable glide_instance0_16000
+cd /glide/nodes/instance0_16000/
+./shutdown.sh
+sleep 30s
+systemctl start glide_instance0_16000
+systemctl status glide_instance0_16000
