@@ -89,7 +89,7 @@ export PATH=$PATH:/glide/mysql/bin/
 ### mysql
 ### mysql: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
 
-sudo yum install libncurses*
+sudo yum install libncurses* net-tools -y
 echo 'export PATH=$PATH:/glide/mysql/bin/' >> ~/.bashrc
 
 ### system reboot
